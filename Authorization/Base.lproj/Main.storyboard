@@ -95,6 +95,9 @@
                     <navigationItem key="navigationItem" id="5pf-dl-KhM">
                         <barButtonItem key="leftBarButtonItem" title="Log out" id="tUD-8a-cOj"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="jIu-xy-hhv" id="cFe-H6-pIR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sww-pC-DDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
