@@ -44,7 +44,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="c2l-Dw-mYU" kind="show" id="8MJ-5R-c0v"/>
+                                            <segue destination="c2l-Dw-mYU" kind="show" identifier="goToWelcomeVC" id="8MJ-5R-c0v"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,13 +93,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5pf-dl-KhM">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="tUD-8a-cOj"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="tUD-8a-cOj">
+                            <connections>
+                                <segue destination="4hL-Qn-1cC" kind="unwind" unwindAction="unwindFor:" id="pzK-40-DqN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameLabel" destination="jIu-xy-hhv" id="cFe-H6-pIR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sww-pC-DDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4hL-Qn-1cC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1508" y="59"/>
         </scene>
