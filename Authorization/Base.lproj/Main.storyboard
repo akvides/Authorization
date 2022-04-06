@@ -30,7 +30,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZu-Qu-8vC">
                                         <rect key="frame" x="0.0" y="64" width="294" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="lfs-1v-HUx"/>
                                         </connections>
@@ -59,15 +59,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n3r-Kr-aAH"/>
+                    <connections>
+                        <outlet property="loginButton" destination="7Qr-gE-zwH" id="EQh-Nk-Qpi"/>
+                        <outlet property="nameTextField" destination="tdz-O2-gz8" id="kng-5O-2sh"/>
+                        <outlet property="passwordTextField" destination="oZu-Qu-8vC" id="mXe-5J-JVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713" y="60"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="xlK-m3-qCk">
             <objects>
-                <viewController id="c2l-Dw-mYU" sceneMemberID="viewController">
+                <viewController id="c2l-Dw-mYU" customClass="WelcomeViewController" customModule="Authorization" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HON-aX-E9G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
