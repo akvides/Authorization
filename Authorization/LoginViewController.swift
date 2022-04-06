@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+    private let login = "Vasilii"
+    private let password = "qwerty"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,28 +25,38 @@ class LoginViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard nameTextField.text != "" else {
-            presentAlertController(title: "Имя не заполнено", message: "Введи имя и попробуй снова")
-            return
-        }
-        
-        guard passwordTextField.text != "" else {
-            presentAlertController(title: "Не введен пароль", message: "Введи пароль")
-            return
-        }
-        
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.name = nameTextField.text
         
         view.endEditing(true)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        guard nameTextField.text != "" else {
+            presentAlertController(title: "Имя не заполнено", message: "Введи имя и попробуй снова")
+            return false
+        }
+        
+        guard passwordTextField.text != "" else {
+            presentAlertController(title: "Не введен пароль", message: "Введи пароль")
+            return false
+        }
+        
+        guard nameTextField.text == login && passwordTextField.text == password else {
+            presentAlertController(title: "Не корректные данные", message: "Неправильно введен логин или пароль")
+            return false
+        }
+        
+        return true
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        
         nameTextField.text = ""
         passwordTextField.text = ""
     }
@@ -75,15 +88,11 @@ extension LoginViewController: UITextFieldDelegate {
                 passwordTextField.becomeFirstResponder()
             }
             
-        case passwordTextField:
-            if textField.text == "" {
-                presentAlertController(title: "Не введен пароль", message: "Введи пароль")
-            } else {
+        default:
+            
+            if shouldPerformSegue(withIdentifier: "goToWelcomeVC", sender: nil) {
                 performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
             }
-            
-        default:
-            break // Я согласен с логикой Алексея по поводу того чтобы не оставлять ничего лишнего, однако считаю что в подобном алгоритме использование двух строчек для явного определения всех текстовых полей, не такая большая цена =)
             
         }
         
