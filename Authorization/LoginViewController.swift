@@ -79,7 +79,6 @@ extension LoginViewController: UITextFieldDelegate {
             if textField.text == "" {
                 presentAlertController(title: "Не введен пароль", message: "Введи пароль")
             } else {
-                view.endEditing(true)
                 performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
             }
             
