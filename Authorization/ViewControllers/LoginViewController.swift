@@ -14,8 +14,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-    private let login = "Vasilii"
-    private let password = "qwerty"
+//    private let login = "Vasilii"
+//    private let password = "qwerty"
+    private let login = "V"
+    private let password = "q"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,25 @@ class LoginViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+        let tabBarController = segue.destination as! UITabBarController
+//
+//        tabBarController.viewControllers
+        guard let viewControllers = tabBarController.viewControllers else { return }
         
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.name = nameTextField.text
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.name = nameTextField.text
+            }
+        }
         
         view.endEditing(true)
+        
+//        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+//        welcomeVC.name = nameTextField.text
+//        
+//        view.endEditing(true)
+
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

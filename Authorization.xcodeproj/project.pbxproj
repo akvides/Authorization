@@ -14,6 +14,10 @@
 		748432DD27FC6B8F00CEAC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 748432DC27FC6B8F00CEAC15 /* Assets.xcassets */; };
 		748432E027FC6B8F00CEAC15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 748432DE27FC6B8F00CEAC15 /* LaunchScreen.storyboard */; };
 		748432E827FC6BA100CEAC15 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748432E727FC6BA100CEAC15 /* WelcomeViewController.swift */; };
+		7487A9682804523500ADC0E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7487A9672804523500ADC0E9 /* User.swift */; };
+		748CD75D2804781A00250B2B /* BoardGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD75C2804781A00250B2B /* BoardGameTableViewCell.swift */; };
+		748CD75F28047E0D00250B2B /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD75E28047E0D00250B2B /* GamesViewController.swift */; };
+		748CD76128047E1700250B2B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD76028047E1700250B2B /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		748432DF27FC6B8F00CEAC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		748432E127FC6B8F00CEAC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748432E727FC6BA100CEAC15 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7487A9672804523500ADC0E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		748CD75C2804781A00250B2B /* BoardGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameTableViewCell.swift; sourceTree = "<group>"; };
+		748CD75E28047E0D00250B2B /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		748CD76028047E1700250B2B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		748432D227FC6B8D00CEAC15 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				7487A9662804520500ADC0E9 /* Models */,
 				7487A9632804518000ADC0E9 /* ViewControllers */,
 				7487A9622804516B00ADC0E9 /* Storyboards */,
 				7487A9642804519100ADC0E9 /* SupportingFiles */,
@@ -79,6 +88,9 @@
 			children = (
 				748432D727FC6B8D00CEAC15 /* LoginViewController.swift */,
 				748432E727FC6BA100CEAC15 /* WelcomeViewController.swift */,
+				748CD75E28047E0D00250B2B /* GamesViewController.swift */,
+				748CD76028047E1700250B2B /* SettingsViewController.swift */,
+				748CD76228047F2500250B2B /* CustomCell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -92,6 +104,22 @@
 				748432E127FC6B8F00CEAC15 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		7487A9662804520500ADC0E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7487A9672804523500ADC0E9 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		748CD76228047F2500250B2B /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				748CD75C2804781A00250B2B /* BoardGameTableViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748CD75F28047E0D00250B2B /* GamesViewController.swift in Sources */,
+				748CD75D2804781A00250B2B /* BoardGameTableViewCell.swift in Sources */,
 				748432D827FC6B8D00CEAC15 /* LoginViewController.swift in Sources */,
 				748432E827FC6BA100CEAC15 /* WelcomeViewController.swift in Sources */,
 				748432D427FC6B8D00CEAC15 /* AppDelegate.swift in Sources */,
+				7487A9682804523500ADC0E9 /* User.swift in Sources */,
 				748432D627FC6B8D00CEAC15 /* SceneDelegate.swift in Sources */,
+				748CD76128047E1700250B2B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
