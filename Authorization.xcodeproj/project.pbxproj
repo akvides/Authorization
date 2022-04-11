@@ -18,6 +18,7 @@
 		748CD75D2804781A00250B2B /* BoardGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD75C2804781A00250B2B /* BoardGameTableViewCell.swift */; };
 		748CD75F28047E0D00250B2B /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD75E28047E0D00250B2B /* GamesViewController.swift */; };
 		748CD76128047E1700250B2B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD76028047E1700250B2B /* SettingsViewController.swift */; };
+		748CD764280484CF00250B2B /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CD763280484CF00250B2B /* FilterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		748CD75C2804781A00250B2B /* BoardGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameTableViewCell.swift; sourceTree = "<group>"; };
 		748CD75E28047E0D00250B2B /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		748CD76028047E1700250B2B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		748CD763280484CF00250B2B /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,7 @@
 				748432E727FC6BA100CEAC15 /* WelcomeViewController.swift */,
 				748CD75E28047E0D00250B2B /* GamesViewController.swift */,
 				748CD76028047E1700250B2B /* SettingsViewController.swift */,
-				748CD76228047F2500250B2B /* CustomCell */,
+				748CD76228047F2500250B2B /* CustomElement */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -114,12 +116,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		748CD76228047F2500250B2B /* CustomCell */ = {
+		748CD76228047F2500250B2B /* CustomElement */ = {
 			isa = PBXGroup;
 			children = (
 				748CD75C2804781A00250B2B /* BoardGameTableViewCell.swift */,
+				748CD763280484CF00250B2B /* FilterButton.swift */,
 			);
-			path = CustomCell;
+			path = CustomElement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				748CD75F28047E0D00250B2B /* GamesViewController.swift in Sources */,
+				748CD764280484CF00250B2B /* FilterButton.swift in Sources */,
 				748CD75D2804781A00250B2B /* BoardGameTableViewCell.swift in Sources */,
 				748432D827FC6B8D00CEAC15 /* LoginViewController.swift in Sources */,
 				748432E827FC6BA100CEAC15 /* WelcomeViewController.swift in Sources */,

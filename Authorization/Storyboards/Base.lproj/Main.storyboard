@@ -229,29 +229,38 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WU7-av-c99">
                                                 <rect key="frame" x="0.0" y="28" width="259" height="19"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTa-Uq-n91">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTa-Uq-n91" customClass="FilterButton" customModule="Authorization" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="77" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Простая" image="circle" catalog="system">
                                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="applyFilters:" destination="JdW-VF-RkV" eventType="touchUpInside" id="ZRk-Cb-X0R"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-E1-Nvg">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-E1-Nvg" customClass="FilterButton" customModule="Authorization" customModuleProvider="target">
                                                         <rect key="frame" x="97" y="0.0" width="78" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Средняя" image="circle" catalog="system">
                                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="applyFilters:" destination="JdW-VF-RkV" eventType="touchUpInside" id="xGF-Ul-mTA"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rc-X4-PdN">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rc-X4-PdN" customClass="FilterButton" customModule="Authorization" customModuleProvider="target">
                                                         <rect key="frame" x="195" y="0.0" width="64" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Жесть" image="circle" catalog="system">
                                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="applyFilters:" destination="JdW-VF-RkV" eventType="touchUpInside" id="pGK-If-lPj"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -283,7 +292,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WaQ-Q0-132">
                                                             <rect key="frame" x="65" y="13.5" width="183" height="33.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnV-oF-MAT">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnV-oF-MAT">
                                                                     <rect key="frame" x="0.0" y="0.0" width="39" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                                     <nil key="textColor"/>
@@ -340,6 +349,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Games" image="list.bullet" catalog="system" id="lVx-96-rcR"/>
+                    <connections>
+                        <outlet property="gamesTableView" destination="ffv-Iw-DcE" id="9lb-CG-u8p"/>
+                        <outletCollection property="filterWeightButtons" destination="uTa-Uq-n91" collectionClass="NSMutableArray" id="BCI-hX-sGt"/>
+                        <outletCollection property="filterWeightButtons" destination="QBC-E1-Nvg" collectionClass="NSMutableArray" id="WZ7-2U-bNj"/>
+                        <outletCollection property="filterWeightButtons" destination="6Rc-X4-PdN" collectionClass="NSMutableArray" id="Zrn-r4-KaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yX5-ld-m2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
