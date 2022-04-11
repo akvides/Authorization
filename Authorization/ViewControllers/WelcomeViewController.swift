@@ -31,9 +31,9 @@ class WelcomeViewController: UIViewController {
     
     @objc func updateWelcomeText() {
         if userDefaults.bool(forKey: "surnameDisplay") {
-            nameLabel.text = "Hello \(name!) \(surname!)"
+            nameLabel.text = "Привет \(name!) \(surname!)"
         } else {
-            nameLabel.text = "Hello \(name!)"
+            nameLabel.text = "Привет \(name!)"
         }
     }
     

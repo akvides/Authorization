@@ -14,11 +14,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-//    private let login = "Vasilii"
-//    private let password = "qwerty"
-    private let login = "V"
-    private let password = "q"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,31 +21,30 @@ class LoginViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
         let tabBarController = segue.destination as! UITabBarController
-//
-//        tabBarController.viewControllers
+        
         guard let viewControllers = tabBarController.viewControllers else { return }
         
         for viewController in viewControllers {
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.name = nameTextField.text
+                welcomeVC.name = User.getUsers()[0].name
+                welcomeVC.surname = User.getUsers()[0].surname
+            } else if let settingsVC = viewController as? SettingsViewController {
+                settingsVC.login = User.getUsers()[0].login
+                settingsVC.name = User.getUsers()[0].name
+                settingsVC.surname = User.getUsers()[0].surname
+                settingsVC.age = User.getUsers()[0].age
             }
         }
         
         view.endEditing(true)
-        
-//        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-//        welcomeVC.name = nameTextField.text
-//        
-//        view.endEditing(true)
 
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         guard nameTextField.text != "" else {
-            presentAlertController(title: "Имя не заполнено", message: "Введи имя и попробуй снова")
+            presentAlertController(title: "Логин не введен", message: "Введи имя и попробуй снова")
             return false
         }
         
@@ -59,7 +53,8 @@ class LoginViewController: UIViewController {
             return false
         }
         
-        guard nameTextField.text == login && passwordTextField.text == password else {
+        guard nameTextField.text == User.getUsers()[0].login &&
+                passwordTextField.text == User.getUsers()[0].password else {
             presentAlertController(title: "Не корректные данные", message: "Неправильно введен логин или пароль")
             return false
         }
@@ -99,7 +94,7 @@ extension LoginViewController: UITextFieldDelegate {
             
         case nameTextField:
             if textField.text == "" {
-                presentAlertController(title: "Имя не заполнено", message: "Введи имя и попробуй снова")
+                presentAlertController(title: "Логин не введен", message: "Введи логин и попробуй снова")
             } else {
                 passwordTextField.becomeFirstResponder()
             }
