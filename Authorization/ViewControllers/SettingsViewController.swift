@@ -8,22 +8,55 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var displayedSurname: UIButton!
+    
+    private let userDefaults = UserDefaults.standard
+    private let notificationCenter = NotificationCenter.default
+    
+    var login: String!
+    var name: String!
+    var surname: String!
+    var age: Int!
+    
+    private var surnameDisplay: Bool!
+    
+    private let enableImage = UIImage(systemName: "circle.inset.filled")
+    private let disableImage = UIImage(systemName: "circle")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        loginLabel.text = login
+        nameLabel.text = name
+        surnameLabel.text = surname
+        ageLabel.text = String(age)
+        
+        surnameDisplay = userDefaults.bool(forKey: "surnameDisplay")
+        displaySurname()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func setupDisplayedSurname() {
+        
+        surnameDisplay = !surnameDisplay
+        displaySurname()
+        userDefaults.set(surnameDisplay, forKey: "surnameDisplay")
+        self.notificationCenter.post(name: NSNotification.Name("updateWelcomeText"), object: nil)
+        
     }
-    */
-
+    
+    private func displaySurname() {
+        
+        if surnameDisplay {
+            displayedSurname.setImage(enableImage, for: .normal)
+        } else {
+            displayedSurname.setImage(disableImage, for: .normal)
+        }
+    }
+    
 }

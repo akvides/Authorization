@@ -12,12 +12,32 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     var name: String!
+    var surname: String!
+    
+    private let userDefaults = UserDefaults.standard
+    private let notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nameLabel.text = "Hello \(name ?? "")"
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(updateWelcomeText),
+                                       name: NSNotification.Name("updateWelcomeText"),
+                                       object: nil)
+        
+        updateWelcomeText()
+        
     }
+    
+    @objc func updateWelcomeText() {
+        if userDefaults.bool(forKey: "surnameDisplay") {
+            nameLabel.text = "Hello \(name!) \(surname!)"
+        } else {
+            nameLabel.text = "Hello \(name!)"
+        }
+    }
+    
+
     
 }
 

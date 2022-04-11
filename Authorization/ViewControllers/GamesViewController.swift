@@ -12,13 +12,13 @@ class GamesViewController: UIViewController {
     @IBOutlet var filterWeightButtons: [FilterButton]!
     @IBOutlet weak var gamesTableView: UITableView!
     
-    var boardGames = BoardGame.getBoardGames()
+    private var boardGames = BoardGame.getBoardGames()
     
-    var countFilters = 0
-    var weights = [Weight]()
+    private var countFilters = 0
+    private var weights = [Weight]()
     
-    let enableImage = UIImage(systemName: "circle.inset.filled")
-    let disableImage = UIImage(systemName: "circle")
+    private let enableImage = UIImage(systemName: "circle.inset.filled")
+    private let disableImage = UIImage(systemName: "circle")
     
     override func viewDidLoad() {
         super.viewDidLoad()

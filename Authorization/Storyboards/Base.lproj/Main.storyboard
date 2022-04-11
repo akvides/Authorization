@@ -382,7 +382,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="circle.inset.filled" catalog="system"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="circle.inset.filled" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="setupDisplayedSurname" destination="uIX-vG-dQI" eventType="touchUpInside" id="7DE-hK-Ua3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -462,6 +465,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Y36-2D-5jf"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="CAS-vR-uxg" id="jpp-dZ-EZA"/>
+                        <outlet property="displayedSurname" destination="dUE-It-1NT" id="S3m-jv-50E"/>
+                        <outlet property="loginLabel" destination="dQn-fj-hhM" id="9US-Uq-vXE"/>
+                        <outlet property="nameLabel" destination="RtZ-k9-P00" id="mVm-wv-dj6"/>
+                        <outlet property="surnameLabel" destination="5zT-Db-dj4" id="a7U-PO-tyP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dna-Gl-42P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
